@@ -45,9 +45,12 @@
                 return;
             }
             if (bookIndex !== -1) {
-                buku[bookIndex].jumlah += parseInt(jumlah);
-
-                alert(`Jumlah ${buku[bookIndex].nama} diperbarui menjadi ${buku[bookIndex].jumlah}`);
+                if (jumlah > buku[bookIndex].jumlah) {
+                    alert(`Maaf, jumlah ${buku[bookIndex].nama} yang tersedia hanya ${buku[bookIndex].jumlah}`);
+                } else {
+                    buku[bookIndex].jumlah += jumlah;
+                    alert(`Jumlah ${buku[bookIndex].nama} diperbarui menjadi ${buku[bookIndex].jumlah}`);
+                }
             } else {
                 alert(`Buku ${karakter} tidak ditemukan`);
             }
