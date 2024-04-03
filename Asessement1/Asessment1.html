@@ -27,12 +27,27 @@
     <button type="button" onclick="submitForm()">Kirim</button>
 
     <script>
+        let buku = [
+            { "nama": "sherlock", "jumlah": 2 },
+            { "nama": "lupin", "jumlah": 2 },
+            { "nama": "aladin", "jumlah": 2 },
+        ];
+
         function submitForm() {
             const jumlah = document.getElementById('jumlah').value;
             const karakter = document.getElementById('karakter').value;
 
-            alert(`Jumlah: ${jumlah}, Karakter Favorit: ${karakter}`);
+            const bookIndex = buku.findIndex(book => book.nama === karakter);
+
+            if (bookIndex !== -1) {
+                buku[bookIndex].jumlah += parseInt(jumlah);
+
+                alert(`Jumlah ${buku[bookIndex].nama} diperbarui menjadi ${buku[bookIndex].jumlah}`);
+            } else {
+                alert(`Buku ${karakter} tidak ditemukan`);
+            }
         }
     </script>
 </body>
+
 </html>
