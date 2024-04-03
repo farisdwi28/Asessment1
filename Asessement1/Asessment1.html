@@ -26,6 +26,13 @@
 
     <button type="button" onclick="submitForm()">Kirim</button>
 
-</body>
+    <script>
+        function submitForm() {
+            const jumlah = document.getElementById('jumlah').value;
+            const karakter = document.getElementById('karakter').value;
 
+            alert(`Jumlah: ${jumlah}, Karakter Favorit: ${karakter}`);
+        }
+    </script>
+</body>
 </html>
