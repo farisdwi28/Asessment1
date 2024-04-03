@@ -19,6 +19,7 @@
 
     <label for="karakter">Karakter Favorit:</label>
     <select id="karakter" name="karakter">
+        <option value="">-</option>
         <option value="sherlock">Sherlock Holmes</option>
         <option value="lupin">Arsene Lupin</option>
         <option value="aladin">Aladin</option>
@@ -39,6 +40,10 @@
 
             const bookIndex = buku.findIndex(book => book.nama === karakter);
 
+            if (jumlah === '' || karakter === '') {
+                alert('Jumlah dan karakter tidak boleh kosong!');
+                return;
+            }
             if (bookIndex !== -1) {
                 buku[bookIndex].jumlah += parseInt(jumlah);
 
